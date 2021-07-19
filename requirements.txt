@@ -1,3 +1,6 @@
-# Included because many Paas's require a requirements.txt file in the project root
-# Just installs the production requirements.
--r requirements/prod.txt
+click==8.0.1
+Flask==2.0.1
+itsdangerous==2.0.1
+Jinja2==3.0.1
+MarkupSafe==2.0.1
+Werkzeug==2.0.1

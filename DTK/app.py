@@ -6,6 +6,8 @@ import sys
 from flask import Flask, render_template
 
 from DTK import commands, public, user
+
+
 from DTK.extensions import (
     bcrypt,
     cache,
@@ -18,7 +20,7 @@ from DTK.extensions import (
 )
 
 
-def create_app(config_object="DTK.settings"):
+def create_app(config_object='config.Config'):
     """Create application factory, as explained here: http://flask.pocoo.org/docs/patterns/appfactories/.
 
     :param config_object: The configuration object to use.
