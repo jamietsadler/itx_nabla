@@ -10,7 +10,7 @@
   <head>
     <meta charset="utf-8" />
 
-    <link rel="shortcut icon" href="{{static_url_for('static', filename='build/img/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{static_url_for('assets', filename='img/favicon.ico') }}">
     <title>
       {% block page_title %} 
       Data Toolkit Development
@@ -28,7 +28,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{{ static_url_for('static', filename='build/main_css.bundle.css') }}"
+      href="{{ static_url_for('static', filename='main.css') }}"
     />
 
     {% block css %}{% endblock %}
@@ -62,7 +62,7 @@
     {% include "footer.html" %}
 
     <!-- JavaScript at the bottom for fast page loading -->
-    <script src="{{ static_url_for('static', filename='build/main_js.bundle.js') }}"></script>
+    <script src="{{ static_url_for('static', filename='build/main.js') }}"></script>
     {% block js %}{% endblock %}
     <!-- end scripts -->
     {% endblock %}
