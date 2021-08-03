@@ -5,7 +5,7 @@ import sys
 
 from flask import Flask, render_template
 
-from DTK import commands, public, user, projects
+from DTK import commands, public, user, projects, toolkit
 
 
 from DTK.extensions import (
@@ -54,6 +54,8 @@ def register_blueprints(app):
     app.register_blueprint(public.views.blueprint)
     app.register_blueprint(user.views.blueprint)
     app.register_blueprint(projects.views.blueprint)
+    app.register_blueprint(toolkit.views.blueprint)
+
 
     return None
 
