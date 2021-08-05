@@ -1,6 +1,6 @@
 {
   "name": "DTK",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Development of MVP for IntalytX DTK",
   "scripts": {
     "build": "run-script-os",
