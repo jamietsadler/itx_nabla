@@ -11,6 +11,8 @@ from flask import (
 )
 from flask_login import login_required, login_user, logout_user
 
+from .plots import *
+
 blueprint = Blueprint("toolkit", __name__, url_prefix="/toolkit", static_folder="../static")
 
 @blueprint.route("/")
