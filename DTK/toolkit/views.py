@@ -19,7 +19,7 @@ def dtkhome():
     return render_template("dtkbase.html")
 
 @blueprint.route("/dashboard")
-def toolkitdashboard():
+def dashboard():
     """List members."""
     return render_template("toolkit/dashboard.html")
 

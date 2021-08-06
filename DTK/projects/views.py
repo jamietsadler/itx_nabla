@@ -14,6 +14,6 @@ from flask_login import login_required, login_user, logout_user
 blueprint = Blueprint("projects", __name__, url_prefix="/projects", static_folder="../static")
 
 @blueprint.route("/")
-def members():
+def projects():
     """List members."""
     return render_template("projects/projects.html")
