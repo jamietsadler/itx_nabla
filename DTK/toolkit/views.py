@@ -16,14 +16,14 @@ blueprint = Blueprint("toolkit", __name__, url_prefix="/toolkit", static_folder=
 @blueprint.route("/")
 def dtkhome():
     """List members."""
-    return render_template("dtkbase.html")
+    return render_template("toolkit/home.html")
 
 @blueprint.route("/dashboard")
 def dashboard():
     """List members."""
     return render_template("toolkit/dashboard.html")
 
-@blueprint.route("/")
+@blueprint.route("/connect")
 def connect():
     """List members."""
     return render_template("toolkit/connect.html")
@@ -32,3 +32,13 @@ def connect():
 def workflow():
     """List members."""
     return render_template("toolkit/flow.html")
+
+@blueprint.route("/users")
+def project_users():
+    """List members."""
+    return render_template("toolkit/users.html")
+
+@blueprint.route("/apps")
+def project_apps():
+    """List members."""
+    return render_template("toolkit/apps.html")
