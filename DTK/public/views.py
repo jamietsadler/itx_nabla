@@ -10,21 +10,21 @@ from flask import (
     url_for,
 )
 from flask_login import login_required, login_user, logout_user
-
+from bokeh.embed import components
 from DTK.extensions import login_manager
 from DTK.public.forms import LoginForm
 from DTK.user.forms import RegisterForm
 from DTK.user.models import User
 from DTK.utils import flash_errors
+from bokeh.plotting import figure
+from bokeh.embed import components
 
 blueprint = Blueprint("public", __name__, static_folder="../static")
-
 
 @login_manager.user_loader
 def load_user(user_id):
     """Load user by ID."""
     return User.get_by_id(int(user_id))
-
 
 @blueprint.route("/", methods=["GET", "POST"])
 def home():
@@ -40,6 +40,7 @@ def home():
             return redirect(redirect_url)
         else:
             flash_errors(form)
+
     return render_template("public/home.html", form=form)
 
 

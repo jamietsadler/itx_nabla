@@ -1,9 +1,22 @@
 {% extends 'dtkbase.html' %}
 {% set active_page = "dashboard" %}
 {% block content %}
-<div class="container-fluid">
-    <div class="col">
-        
+
+<div class="row">
+    <div class="col-10">
+        <div class='bokeh'>
+            {{ div|safe }}
+            {{ script|safe }}
+        </div>
     </div>
 </div>
+<div class = "row">
+    <div class="col-5">
+        <div class='bokeh'>
+            {{ div2|safe }}
+            {{ script2|safe }}
+        </div>
+    </div>
+</div>
+
 {% endblock %}
