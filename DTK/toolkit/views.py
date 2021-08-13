@@ -13,7 +13,7 @@ from flask import (
 from flask_login import login_required, login_user, logout_user
 
 from bokeh.embed import components
-
+from bokeh.layouts import layout
 from .plots import *
 
 blueprint = Blueprint("toolkit", __name__, url_prefix="/toolkit", static_folder="../static")
@@ -28,20 +28,26 @@ def dashboard():
     """List members."""
     plot = bokeh_discover()
     plot2 = bokeh_discover_2()
-    bokeh_script, bokeh_div = components(plot)
-    bokeh_script_2, bokeh_div_2 = components(plot2)
+    plot3 = bokeh_discover()
+    page_layout = layout([
+        [plot],
+        [plot2, plot3]
+    ])
+    # bokeh_script, bokeh_div = components(plot)
+    # bokeh_script_2, bokeh_div_2 = components(plot2)
+    bokeh_script, bokeh_div = components(page_layout)
     return render_template(
         "toolkit/dashboard.html", 
         script=bokeh_script, 
         div=bokeh_div,
-        script2=bokeh_script_2,
-        div2=bokeh_div_2
+        # script2=bokeh_script_2,
+        # div2=bokeh_div_2
     )
 
 @blueprint.route("/connect")
-def connect():
+def jobs():
     """List members."""
-    return render_template("toolkit/connect.html")
+    return render_template("toolkit/jobs.html")
 
 @blueprint.route("/workflow")
 def workflow():

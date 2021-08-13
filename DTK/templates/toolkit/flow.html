@@ -1,4 +1,97 @@
 {% extends 'dtkbase.html' %}
 {% set active_page = "workflow" %}
+{% block css %}
+ <style>
+
+    
+    /* Style the tab */
+    .tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #B2D8D8;
+    }
+    
+    /* Style the buttons inside the tab */
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+    
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: #00b3b3;
+    }
+    
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: #00b3b3;
+    }
+    
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+      
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+    </style>
+{% endblock %}
+
 {% block content %}
+<div class="border-dark tab">
+    <span><button class="tablinks" onclick="openCity(event, 'Flow')" id="defaultOpen"><i class="bi bi-arrow-90deg-right"></i>  Flow</button></span>
+    <span><button class="tablinks" onclick="openCity(event, 'Datasets')"><i class="bi bi-bar-chart-fill"></i> Datasets</button></span>
+    <span><button class="tablinks" onclick="openCity(event, 'Recipes')"><i class="bi bi-hammer"></i>  Recipes</button></span>
+  </div>
+  
+  <div id="Flow" class="border-dark tabcontent" style="height:650px">
+    <div class="container-fluid">
+        <div class="row">
+            <h3>Flow</h3>
+            <hr/>
+        </div>
+        <div class="row">
+        </div>
+    </div>
+    
+    <p></p>
+  </div>
+  
+  <div id="Datasets" class="border-dark tabcontent" style="height:650px">
+    <h3>Datasets</h3>
+    
+  </div>
+  
+  <div id="Recipes" class="border-dark tabcontent" style="height:650px">
+    <h3>Recipes</h3>
+    
+  </div>
+  
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
 {% endblock %}

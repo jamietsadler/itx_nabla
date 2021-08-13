@@ -7,43 +7,76 @@
     <div class="row d-flex justify-content-center">
 
         <a href="{{ url_for('toolkit.dtkhome') }}" class="col-md project-card justify-content-left" style="text-decoration: none;">
-        <div class="card bg-light mb-3 text-dark" style="max-width: 48rem; width: 24rem;">
-            <div class="card-header">Project 1</div>
+        <div class="card border-primary bg-light mb-3 text-dark" style="max-width: 48rem; width: 24rem; height:210px;">
+            <div class="card-header" style="background-color: #B2D8D8;">ESS Optimization</div>
                 <div class="card-body">
-                    <h5 class="card-title">Project subtitle</h5>
-                    <p>Short project description outlining aims of project</p>
-                    <h6>Flows: 3</h6>
-                    <h6>Warnings: </h6>
+                  
+                    <p>Maximise Site A's storage efficiency in order to reduce costs for grid power and reduce overall demand from site</p>
+                    <div class="container">
+                        <div class = "row">
+                            <h6 class="col-6">Flows:    1</h6>
+                            <h6 class="col-6">Open Tasks:   0</h6>
+                            <h6 class="col-6">Dashboards:   2</h6>
+                        </div>
+                    </div>
                 </div>
             </div>
         </a>
-        <a href="#" class="col-md project-card justify-content-left" style="text-decoration: none;">
-        <div class="card bg-light mb-3 text-dark" style="max-width: 48rem; width: 24rem;">
-        <div class="card-header">Project 1</div>
-        <div class="card-body">
-            <h5 class="card-title">Project subtitle</h5>
-            <p>Short project description outlining aims of project</p>
-            <h6>Flows: 3</h6>
-            <h6>Warnings: </h6>
-        </div>
-        </div>
-        </a>
-        <a href="#" class="col-md project-card justify-content-left" style="text-decoration: none;">
-        <div class="card bg-light mb-3 text-dark" style="max-width: 48rem; width: 24rem;">
-        <div class="card-header">Project 1</div>
-        <div class="card-body">
-            <h5 class="card-title">Project subtitle</h5>
-            <p>Short project description outlining aims of project</p>
-            <h6>Flows: 3</h6>
-            <h6>Warnings: </h6>
-        </div>
-        </div>
-        </a>    
+        <a href="{{ url_for('toolkit.dtkhome') }}" class="col-md project-card justify-content-left" style="text-decoration: none;">
+            <div class="card border-primary bg-light mb-3 text-dark" style="max-width: 48rem; width: 24rem; height:210px;">
+                <div class="card-header" style="background-color: #B2D8D8;">Anomaly Detection</div>
+                    <div class="card-body">
+                      
+                        <p>Description</p>
+                        <div class="container">
+                            <div class = "row">
+                                <h6 class="col-6">Flows:    2</h6>
+                                <h6 class="col-6">Open Tasks:   3</h6>
+                                <h6 class="col-6">Dashboards:   1</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('toolkit.dtkhome') }}" class="col-md project-card justify-content-left" style="text-decoration: none;">
+                <div class="card border-primary bg-light mb-3 text-dark" style="max-width: 48rem; width: 24rem; height:210px;">
+                    <div class="card-header" style="background-color: #B2D8D8;">Predictive Maintenance</div>
+                        <div class="card-body">
+                          
+                            <p>Description</p>
+                            <div class="container">
+                                <div class = "row">
+                                    <h6 class="col-6">Flows:    1</h6>
+                                    <h6 class="col-6">Open Tasks:   0</h6>
+                                    <h6 class="col-6">Dashboards:   2</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+        
     </div>
 </div>
 <div class="Dashboards">
     <div class=" my-4">
         <h3 style="color: #43A6C6">Dashboards</h1>
     </div>
+
+    <a href="{{ url_for('toolkit.dtkhome') }}" class="col-md project-card justify-content-left" style="text-decoration: none;">
+        <div class="card border-info bg-light mb-3 text-dark" style="max-width: 48rem; width: 24rem; height:210px;">
+            <div class="card-header" style="background-color: #CBC3E3;">ESS Optimization</div>
+                <div class="card-body">
+                  
+                    <p>Maximise Site A's storage efficiency in order to reduce costs for grid power and reduce overall demand from site</p>
+                    <div class="container">
+                        <div class = "row">
+                            <h6 class="col-6">Flows:    1</h6>
+                            <h6 class="col-6">Open Tasks:   0</h6>
+                            <h6 class="col-6">Dashboards:   2</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
 </div>
 {% endblock %}
