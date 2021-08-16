@@ -19,7 +19,7 @@ from DTK.utils import flash_errors
 from bokeh.plotting import figure
 from bokeh.embed import components
 
-blueprint = Blueprint("public", __name__, static_folder="../static")
+blueprint = Blueprint("public", __name__, url_prefix="/public", static_folder="../static")
 
 @login_manager.user_loader
 def load_user(user_id):

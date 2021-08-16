@@ -11,7 +11,7 @@ from flask import (
 )
 from flask_login import login_required, login_user, logout_user
 
-blueprint = Blueprint("projects", __name__, url_prefix="/projects", static_folder="../static")
+blueprint = Blueprint("projects", __name__, static_folder="../static")
 
 @blueprint.route("/")
 def projects():

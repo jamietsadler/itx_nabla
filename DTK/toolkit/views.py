@@ -63,3 +63,8 @@ def project_users():
 def project_apps():
     """List members."""
     return render_template("toolkit/apps.html")
+
+@blueprint.route("/gojs")
+def gojs():
+    """List members."""
+    return render_template("gojs.html")
