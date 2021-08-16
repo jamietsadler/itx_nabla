@@ -5,9 +5,9 @@
 {% endblock %}
 {% block content %}
 <div class="container-fluid mt-3">
-    <div class="row scroll justify-content-between">
+    <div class="row scroll justify-content-around">
         <div class="col-xs-12 col-sm-12 col-md-8 m-2 text-left" id="left">
-            <div class="card bg-light p-2">
+            <div class="m-4 card p-2">
                 <div class="card-body">
                  <h1>Energy Storage System Optimization</h1>
                  <h5>Maximise Site A's storage efficiency in order to reduce costs for grid power and reduce overall demand from site</h5>
@@ -19,11 +19,40 @@
                  <p>No project status yet</p>
                 </div>
               </div>
-            <p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p><p>Left contents</p>
-        </div>
 
-    <div class="col-xs-12 col-sm-12 col-md-3 m-2 text-center" id="right">
-        <div><h5 class="position-sticky">Timeline</h5></div><hr/><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p><p>Right contents</p>
+              <div class="m-4 card p-2">
+                <div class="card-body">
+                <div class="container">
+                 <div class = "row my-4">
+                     <div class="col-4">
+                         dfsdfsf
+                     </div>
+                     <div class="col-4">
+                         dfsdfs
+                    </div>
+                    <div class="col-4">
+                        sdfsdf
+                    </div>
+                 </div>
+                 <div class="row my-4">
+                     <div class="col justify-content-center"><button type="button" class="btn btn-info">Go To Flow</button></div>
+                 </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            
+
+    <div class="col-xs-12 col-sm-12 col-md-3 m-2 " id="right">
+        <div><h5 class="position-sticky text-center">Timeline</h5></div><hr/>
+        {% for i in range(10) %}
+            <div class="m-2 card p-2">
+                <h5>Action {{ 11-i }} </h5>
+                <p>Completed on {{ 15 - i }}.6.2021</p>
+                <p>Owner: Joe Bloggs</p>
+            </div>
+        {% endfor %}
     </div>
     </div>
     </div>

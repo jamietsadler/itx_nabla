@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
 
 :root {
     --header-height: 3rem;
@@ -6,7 +6,7 @@
     --first-color: #4723D9;
     --first-color-light: #AFA5D9;
     --white-color: #F7F6FB;
-    --body-font: 'Nunito', sans-serif;
+    --body-font: 'Montserrat', sans-serif;
     --normal-font-size: 1rem;
     --z-fixed: 100
 }
@@ -141,7 +141,8 @@ a {
 }
 
 .body-pd {
-    padding-left: calc(var(--nav-width) + 1rem)
+    padding-left: calc(var(--nav-width) + 1rem);
+    background-color: #F5F5F5;
 }
 
 .active {
