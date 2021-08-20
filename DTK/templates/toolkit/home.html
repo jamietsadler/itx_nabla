@@ -10,6 +10,7 @@
             <div class="m-4 card p-2">
                 <div class="card-body">
                  <h1>Energy Storage System Optimization</h1>
+                 <hr/>
                  <h5>Maximise Site A's storage efficiency in order to reduce costs for grid power and reduce overall demand from site</h5>
                  <ul>
                      <li>Trained on historical data from csv files</li>
@@ -23,23 +24,63 @@
               <div class="m-4 card p-2">
                 <div class="card-body">
                 <div class="container">
+                <div class="row">
+                    <h3>Workflow</h3>
+                    <hr/>
+                </div>
                  <div class = "row my-4">
-                     <div class="col-4">
-                         dfsdfsf
+                     <div class="col-4 text-center">
+                         
+                        <span class=""><h1><i class="bi bi-file-earmark-bar-graph"></i></h1> 3 Datasets</span>
                      </div>
-                     <div class="col-4">
-                         dfsdfs
+                     <div class="col-4 text-center">
+                         <span><h1><i class="bi bi-code-slash"></i></h1>4 Recipes</span>
                     </div>
-                    <div class="col-4">
-                        sdfsdf
+                    <div class="col-4 text-center">
+                        <span><h1><i class="bi bi-diagram-3"></i></h1>2 Models</span>
                     </div>
                  </div>
-                 <div class="row my-4">
-                     <div class="col justify-content-center"><button type="button" class="btn btn-info">Go To Flow</button></div>
+
+                 <div class="row mt-3 text-center">
+                     <div class="col justify-content-center"><a href="{{ url_for('toolkit.workflow') }}"><button type="button" class="btn btn-info">Go To Flow</button></a></div>
                  </div>
+                 <div class="row mt-3 text-center">
+                    <div class="col justify-content-center"><a href="{{ url_for('toolkit.dashboard') }}"><button type="button" class="btn btn-warning">Go To Dashboards</button></a></div>
+                </div>
+
                 </div>
                 </div>
               </div>
+
+              <div class="m-4 card p-2">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <h3>Context</h3>
+                        </div>
+                        <hr/>
+                        <p>The goal of this project is to optimise the use of the solar plant powering Site A and reduce the reliance on power bought from grid. 
+                            The site should buy from the grid as little as possible, and preferably only when the rate is low (during overnight hours).
+                            This will be done by forecasting the solar output of the plant and the site load using deep learning models.
+                            The predictions can then be used to optimise the discharge of the battery, and work out when power needs to be bought.
+                        </p>
+                        <div class="row mt-5">
+                            <h3>Business Case</h3>
+                        </div>
+                        <hr/>
+                        <p>Analysis of cost savings from optimization will provide business case.</p>                        
+                        <div class="row mt-5">
+                            <h3>Data Sources</h3>
+                        </div>
+                        <hr/>
+                        <p>For predicting the solar output and site load, data will be sourced from weather APIs.</p>
+                        <p>In addition, data from the site's data collection system will also be used as further features for models</p>
+
+                    
+                    </div>
+                </div>
+              </div>
+
             </div>
 
             

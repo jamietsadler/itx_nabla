@@ -3,11 +3,7 @@
 from flask import (
     Blueprint,
     current_app,
-    flash,
-    redirect,
-    render_template,
-    request,
-    url_for,
+    render_template
 )
 
 from flask_login import login_required, login_user, logout_user
