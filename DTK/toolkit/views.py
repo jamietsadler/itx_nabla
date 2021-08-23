@@ -12,6 +12,10 @@ from bokeh.embed import components
 from bokeh.layouts import layout
 from .plots import *
 
+import json
+
+from DTK.toolkit.forms import JSONForm
+
 blueprint = Blueprint("toolkit", __name__, url_prefix="/toolkit", static_folder="../static")
 
 @blueprint.route("/")
@@ -60,7 +64,17 @@ def project_apps():
     """List members."""
     return render_template("toolkit/apps.html")
 
-@blueprint.route("/gojs")
+@blueprint.route("/gojs", methods=['GET', 'POST'])
 def gojs():
     """List members."""
-    return render_template("gojs.html")
+    # saved_date = json.loads('data.json')
+    form = JSONForm()
+    json_string = str(form.json.data)
+
+    json_data = json.dumps(json_string)
+    with open('data.json', 'w', encoding='utf-8') as f:
+        json.dump(json_data, f, ensure_ascii=False, indent=4)
+    return render_template("gojs.html", form = form)
+    
+
+

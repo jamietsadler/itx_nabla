@@ -255,7 +255,7 @@
             // Show the diagram's model in JSON format
             function save() {
               document.getElementById("mySavedModel").value = myDiagram.model.toJson();
-              
+              document.getElementById("json").value = myDiagram.model.toJson();
               myDiagram.isModified = false;
             }
             function load() {
@@ -279,22 +279,32 @@
       <button id="SaveButton" onclick="save()">Save</button>
       <button onclick="load()">Load</button>
       <button onclick="layout()">Layout</button>
-      <textarea id="mySavedModel" style="width:100%;height:300px;display:none;">
-        { "class": "go.GraphLinksModel",
-          "copiesArrays": true,
-          "copiesArrayObjects": true,
-          "nodeDataArray": [
-            
-        
-          ],
-          "linkDataArray": [
-            
-          ]
-        }
-          </textarea>
+      
 
 
-
+          <form name="addForm" id="addForm" method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div>
+              {{ form.json(placeholder="json") }}
+              <textarea id="mySavedModel" style="width:100%;height:300px;">
+                
+                { "class": "go.GraphLinksModel",
+                  "copiesArrays": true,
+                  "copiesArrayObjects": true,
+                  "nodeDataArray": [
+                    
+                
+                  ],
+                  "linkDataArray": [
+                    
+                  ]
+                }
+                </textarea>
+            </div>
+            <div class="form-group">
+              {{ form.submit(class="btn btn-secondary") }}
+            </div>
+          </form>
 
 
     <!--Container Main end-->
