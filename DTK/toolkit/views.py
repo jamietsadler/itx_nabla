@@ -33,16 +33,11 @@ def dashboard():
         [plot],
         [plot2, plot3]
     ])
-    # bokeh_script, bokeh_div = components(plot)
-    # bokeh_script_2, bokeh_div_2 = components(plot2)
     bokeh_script, bokeh_div = components(page_layout)
     return render_template(
         "toolkit/dashboard.html", 
         script=bokeh_script, 
-        div=bokeh_div,
-        # script2=bokeh_script_2,
-        # div2=bokeh_div_2
-    )
+        div=bokeh_div)
 
 @blueprint.route("/connect")
 def jobs():
@@ -67,14 +62,23 @@ def project_apps():
 @blueprint.route("/gojs", methods=['GET', 'POST'])
 def gojs():
     """List members."""
-    # saved_date = json.loads('data.json')
+    #saved_data = json.loads('data.json') # load saved model
+    
     form = JSONForm()
     json_string = str(form.json.data)
+    contents = json_string.strip('"')
+    contents = contents.replace('\\', '')
 
-    json_data = json.dumps(json_string)
+    json_data = json.dumps(contents)
     with open('data.json', 'w', encoding='utf-8') as f:
-        json.dump(json_data, f, ensure_ascii=False, indent=4)
-    return render_template("gojs.html", form = form)
+        json.dump(contents, f, ensure_ascii=False, indent=4)
+
+    with open('data.json') as f:
+        saved_data = json.load(f)
+
+    return render_template("toolkit/gojs.html", data=saved_data, form = form)
     
 
-
+@blueprint.route('/dataset')
+def data_explore():
+    return render_template('toolkit/dataset.html')
