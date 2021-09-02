@@ -1,0 +1,25 @@
+{% extends 'dtkbase.html' %}
+{% set active_page = "workflow" %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
+    <div>
+        <h4 class="mx-4">Site A Data</h4>
+    </div>
+    <div class="collapse navbar-collapse mx-4" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link " href="{{ url_for('toolkit.data_summary') }}">Summary</a>
+        <a class="nav-item nav-link active" href="{{ url_for('toolkit.data_explore') }}">Explore</a>
+        <a class="nav-item nav-link" href="{{ url_for('toolkit.data_charts') }}">Charts</a>
+        <a class="nav-item nav-link" href="{{ url_for('toolkit.data_history') }}">History</a>
+        <a class="nav-item nav-link" href="{{ url_for('toolkit.data_settings') }}">Settings</a>
+        <a class="nav-item nav-link mx-4 text-dark"href="{{ url_for('toolkit.workflow') }}"><i class="bi bi-arrow-90deg-right"></i>  Back to flow</a>
+      </div>
+    </div>
+</nav>
+<div class="row m-4">
+  <div class="col-4">
+    {{ data_table|safe }}
+   {{ script|safe }}
+  </div>
+</div>
+{% endblock %}

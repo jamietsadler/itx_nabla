@@ -1,18 +1,35 @@
 {% extends 'dtkbase.html' %}
-{% set active_page = "dataset" %}
+{% set active_page = "workflow" %}
 {% block content %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div>
-        <h4 class="mx-4">Site A Data</h4>
+        <h4 class="mx-4"><a class="text-reset"href="{{ url_for('toolkit.data_summary') }}">Site A Data</a></h4>
     </div>
     <div class="collapse navbar-collapse mx-4" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="#">Summary</a>
-        <a class="nav-item nav-link" href="#">Explore</a>
-        <a class="nav-item nav-link" href="#">Charts</a>
-        <a class="nav-item nav-link" href="#">History</a>
-        <a class="nav-item nav-link" href="#">Settings</a>
+        <a class="nav-item nav-link active" href="{{ url_for('toolkit.data_summary') }}">Summary</a>
+        <a class="nav-item nav-link" href="{{ url_for('toolkit.data_explore') }}">Explore</a>
+        <a class="nav-item nav-link" href="{{ url_for('toolkit.data_charts') }}">Charts</a>
+        <a class="nav-item nav-link" href="{{ url_for('toolkit.data_history') }}">History</a>
+        <a class="nav-item nav-link" href="{{ url_for('toolkit.data_settings') }}">Settings</a>
+        <a class="nav-item nav-link mx-4 text-dark"href="{{ url_for('toolkit.workflow') }}"><i class="bi bi-arrow-90deg-right"></i>  Back to flow</a>
       </div>
     </div>
 </nav>
+<div class="m-2 row">
+    <div class="m-2 card p-2 col-11">
+        <div class="card-body">
+            <h1>Site A data</h1>
+        </div>
+    </div>
+</div>
+<div class="m-2 row">
+    <div class="m-2 card p-2 col-11">
+        <div class="card-body">
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <h6>Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC</h6>
+            <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+        </div>
+    </div>
+</div>
 {% endblock %}

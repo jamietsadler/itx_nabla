@@ -10,6 +10,8 @@ from flask_login import login_required, login_user, logout_user
 
 from bokeh.embed import components
 from bokeh.layouts import layout
+from bokeh.models import ColumnDataSource, DataTable, DateFormatter, TableColumn
+
 from .plots import *
 
 import json
@@ -44,10 +46,25 @@ def jobs():
     """List members."""
     return render_template("toolkit/jobs.html")
 
-@blueprint.route("/workflow")
+@blueprint.route("/workflow", methods=["GET", "POST"])
 def workflow():
     """List members."""
-    return render_template("toolkit/flow.html")
+    form = JSONForm()
+    if form.validate_on_submit():
+        
+        json_string = str(form.json.data)
+        contents = json_string.strip('"')
+        contents = contents.replace('\\', '')
+
+        json_data = json.dumps(contents)
+
+        with open('data.json', 'w', encoding='utf-8') as f:
+            json.dump(contents, f, ensure_ascii=False, indent=4)
+
+    with open('data.json') as f:
+        saved_data = json.load(f)
+
+    return render_template("toolkit/flow.html", form=form, data=saved_data)
 
 @blueprint.route("/users")
 def project_users():
@@ -69,16 +86,46 @@ def gojs():
     contents = json_string.strip('"')
     contents = contents.replace('\\', '')
 
-    json_data = json.dumps(contents)
-    with open('data.json', 'w', encoding='utf-8') as f:
-        json.dump(contents, f, ensure_ascii=False, indent=4)
-
     with open('data.json') as f:
         saved_data = json.load(f)
 
-    return render_template("toolkit/gojs.html", data=saved_data, form = form)
+    json_data = json.dumps(contents)
+
+    with open('data.json', 'w', encoding='utf-8') as f:
+        json.dump(contents, f, ensure_ascii=False, indent=4)
+
+    return render_template("gojs.html", data=saved_data, form = form)
     
 
 @blueprint.route('/dataset')
-def data_explore():
+def data_summary():
     return render_template('toolkit/dataset.html')
+
+@blueprint.route('/explore')
+def data_explore():
+    df = pd.read_csv('DTK/static/data/Glucose.csv',  nrows=1000)
+    source = ColumnDataSource(df)
+    columns = [
+        TableColumn(field="datetime", title="Timestamp"),
+        TableColumn(field="glucose", title="Glucose"),
+        TableColumn(field="isig", title="isig"),
+    ]
+    data_table = DataTable(source=source, columns = columns, height = 700)
+
+    script, div_dict = components(data_table)
+
+    return render_template('toolkit/data_explore.html', data_table = div_dict, script = script)
+
+@blueprint.route('/charts')
+def data_charts():
+    layout = bokeh_explore()
+    script, div = components(layout)
+    return render_template('toolkit/data_charts.html', script = script, div = div)
+
+@blueprint.route('/history')
+def data_history():
+    return render_template('toolkit/data_history.html')
+    
+@blueprint.route('/settings')
+def data_settings():
+    return render_template('toolkit/data_settings.html')
