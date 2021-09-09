@@ -110,11 +110,12 @@ def data_explore():
         TableColumn(field="glucose", title="Glucose"),
         TableColumn(field="isig", title="isig"),
     ]
-    data_table = DataTable(source=source, columns = columns, height = 700)
+    data_table = DataTable(source=source, columns = columns, height = 700, width = 400)
 
     script, div_dict = components(data_table)
 
     return render_template('toolkit/data_explore.html', data_table = div_dict, script = script)
+
 
 @blueprint.route('/charts')
 def data_charts():

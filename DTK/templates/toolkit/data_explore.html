@@ -16,10 +16,30 @@
       </div>
     </div>
 </nav>
-<div class="row m-4">
-  <div class="col-4">
+<div class="row justify-content-around m-4">
+  <div class="col-4 h-100 gx-5 m">
     {{ data_table|safe }}
    {{ script|safe }}
+  </div>
+  <div class="col-4 gx-5">
+    <h4>Sample</h4>
+    <hr>
+    <form>
+      <div class="form-group row mt-2">
+        <label for="" class="col-sm-5 col-form-label">No. of records:</label>
+        <div class="col-sm-7">
+          <input type="" class="form-control" id="inputPassword" value="1000" >
+        </div>
+      </div>
+      <div class="form-group row mt-5">
+        <h6 class="font-weight-bold">Sort Values</h6>
+        <label for="">Order By</label>
+        <div class="col-sm-7 my-2">
+          <input type="" class="form-control" id="" aria-describedby="order" placeholder="column">
+          <a class="text-blue">Add sort value</a>
+        </div>  
+      </div>
+    </form>
   </div>
 </div>
 {% endblock %}
