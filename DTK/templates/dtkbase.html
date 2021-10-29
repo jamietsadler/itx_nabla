@@ -29,7 +29,7 @@
                 <a href="{{ url_for('toolkit.jobs') }}" class="nav_link {{ 'active' if active_page == 'jobs' else '' }}"> <i class='bx bx-play nav_icon'></i> <span class="nav_name">Jobs</span> </a>
                 <a href="{{ url_for('toolkit.dashboard') }}" class="nav_link {{ 'active' if active_page == 'dashboard' else '' }}"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboards</span> </a>                        
                 <a href="{{ url_for('toolkit.project_apps') }}" class="nav_link {{ 'active' if active_page == 'apps' else '' }}"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Apps</span> </a> 
-                <a href="{{ url_for('toolkit.project_users') }}" class="nav_link {{ 'active' if active_page == 'users' else '' }}"> <i class='bx bx-user nav_icon'></i><span class="nav_name">Users</span> </a> 
+                <a href="{{ url_for('toolkit.project_users') }}" class="nav_link {{ 'active' if active_page == 'users' else '' }}"> <i class='bx bxs-cog'></i><span class="nav_name">Settings</span> </a> 
                 <a href="{{ url_for('projects.projects' )}}" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Exit Project</span> </a>
             </div>
          </div> 

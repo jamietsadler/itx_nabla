@@ -1,5 +1,27 @@
 {% extends 'dtkbase.html' %}
 {% set active_page = "workflow" %}
+{% block css %}
+  <style>
+  .graph-button {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    background-color: #a3a3a3;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 15px;
+    text-align: vertical;
+    cursor: pointer;
+  }
+
+
+  .selected {
+    border-style: solid;
+    border-color: blue;
+  }
+  </style>
+{% endblock %}
 {% block content %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
     <div>
@@ -16,10 +38,48 @@
       </div>
     </div>
 </nav>
-<div class="row m-4">
-  <div class="col-4">
-    {{ div|safe }}
-   {{ script|safe }}
+<div class="container">
+  <div class="row m-4">
+    <div class="col-4 m-2">
+      <div class="form-group">
+        <label for="sel1">Select Graph Type:</label>
+        <select class="form-control" id="sel1">
+          <option>Line</option>
+          <option>Scatter</option>
+          <option>Bar</option>
+          <option>Histogram</option>
+        </select>
+      </div>
+    </div>
+    <div class="axis col-4 m-2">
+      <form class='form-inline'>
+        <div class="form-group">
+          <label for="XAxisSelect">X: </label>
+          <select class="form-control" id="XAxisSelect" style="width: 80%">
+            {% for i in axis %}
+            <option>{{ i }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="XAxisSelect">Y: </label>
+          <select class="form-control" id="XAxisSelect" style="width: 80%">
+            {% for i in axis %}
+            <option>{{ i }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
+{% endblock %}
+{% block scripts %}
+<script>
+  $(function(){
+	$('.graph-button').click(function(){
+		$(this).toggleClass('selected');
+	});
+});
+</script>
 {% endblock %}

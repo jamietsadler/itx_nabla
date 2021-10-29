@@ -11,6 +11,7 @@ from flask_login import login_required, login_user, logout_user
 from bokeh.embed import components
 from bokeh.layouts import layout
 from bokeh.models import ColumnDataSource, DataTable, DateFormatter, TableColumn
+import pandas as pd
 
 from .plots import *
 
@@ -119,9 +120,9 @@ def data_explore():
 
 @blueprint.route('/charts')
 def data_charts():
-    layout = bokeh_explore()
-    script, div = components(layout)
-    return render_template('toolkit/data_charts.html', script = script, div = div)
+    df = pd.read_csv('DTK/static/data/generation_data.csv', parse_dates = True, index_col = 0)
+    axis = df.columns
+    return render_template('toolkit/data_charts.html', axis = axis)
 
 @blueprint.route('/history')
 def data_history():
